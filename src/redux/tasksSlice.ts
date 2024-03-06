@@ -1,12 +1,12 @@
-import { createSlice, nanoid, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction, nanoid } from "@reduxjs/toolkit";
 import { Task } from "../types/types";
 
 const tasksInitialState: Task[] = [
-  { id: "0", title: "Learn HTML and CSS", status: "completed" },
-  { id: "1", title: "Get good at JavaScript", status: "completed" },
-  { id: "2", title: "Master React", status: "in progress" },
-  { id: "3", title: "Discover Redux", status: "in progress" },
-  { id: "4", title: "Build amazing apps", status: "in progress" },
+  { id: "0", text: "Learn HTML and CSS", completed: true },
+  { id: "1", text: "Get good at JavaScript", completed: true },
+  { id: "2", text: "Master React", completed: false },
+  { id: "3", text: "Discover Redux", completed: false },
+  { id: "4", text: "Build amazing apps", completed: false },
 ];
 
 const tasksSlice = createSlice({
@@ -17,24 +17,26 @@ const tasksSlice = createSlice({
       reducer(state, action: PayloadAction<Task>) {
         state.push(action.payload);
       },
-      prepare(title: string) {
+      prepare(text: string) {
         return {
           payload: {
+            text,
             id: nanoid(),
-            title,
-            status: "in progress",
+            completed: false,
           },
         };
       },
     },
-    deleteTask(state, action: PayloadAction<string>) {
+    deleteTask(state, action) {
       const index = state.findIndex((task) => task.id === action.payload);
       state.splice(index, 1);
     },
-    toggleCompleted(state, action: PayloadAction<string>) {
-      const task = state.find((task) => task.id === action.payload);
-      if (task) {
-        task.status = task.status === "completed" ? "in progress" : "completed";
+    toggleCompleted(state, action) {
+      for (const task of state) {
+        if (task.id === action.payload) {
+          task.completed = !task.completed;
+          break;
+        }
       }
     },
   },
