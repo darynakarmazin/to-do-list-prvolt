@@ -20,16 +20,16 @@ export const StatusFilter = () => {
         All
       </Button>
       <Button
-        selected={filter === statusFilters.active}
-        onClick={() => handleFilterChange(statusFilters.active)}
-      >
-        Active
-      </Button>
-      <Button
         selected={filter === statusFilters.completed}
         onClick={() => handleFilterChange(statusFilters.completed)}
       >
         Completed
+      </Button>
+      <Button
+        selected={filter === statusFilters.active}
+        onClick={() => handleFilterChange(statusFilters.active)}
+      >
+        Current
       </Button>
     </div>
   );
