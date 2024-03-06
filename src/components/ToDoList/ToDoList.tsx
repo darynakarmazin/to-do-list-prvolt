@@ -23,18 +23,16 @@ function ToDoList() {
   const visibleTasks = getVisibleTasks(tasks, statusFilter);
 
   return (
-    <div>
-      <ul className="mb-10 flex flex-wrap justify-center gap-5 items-center">
-        {visibleTasks.map((task) => (
-          <li
-            key={task.id}
-            className="flex h-48 basis-72 flex-col items-center justify-center"
-          >
-            <Todo task={task} />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul className="mb-10 flex flex-wrap justify-center gap-5 items-center">
+      {visibleTasks.map((task) => (
+        <li
+          key={task.id}
+          className="flex h-48 basis-72 flex-col items-center justify-center"
+        >
+          <Todo task={task} />
+        </li>
+      ))}
+    </ul>
   );
 }
 

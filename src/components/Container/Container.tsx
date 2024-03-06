@@ -6,7 +6,7 @@ interface ContainerProps {
 
 function Container({ children }: ContainerProps) {
   return (
-    <div className="flex flex-col justify-center items-center mx-auto max-w-screen-xl p-5 ">
+    <div className="flex flex-col justify-center mx-auto max-w-screen-xl p-5 ">
       {children}
     </div>
   );
