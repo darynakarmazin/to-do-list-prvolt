@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/to-do-list-prvolt/static/css/main.1066743c.css",
-    "main.js": "/to-do-list-prvolt/static/js/main.2690eef1.js",
+    "main.css": "/to-do-list-prvolt/static/css/main.5e2ba78a.css",
+    "main.js": "/to-do-list-prvolt/static/js/main.ed59d27f.js",
     "index.html": "/to-do-list-prvolt/index.html",
-    "main.1066743c.css.map": "/to-do-list-prvolt/static/css/main.1066743c.css.map",
-    "main.2690eef1.js.map": "/to-do-list-prvolt/static/js/main.2690eef1.js.map"
+    "main.5e2ba78a.css.map": "/to-do-list-prvolt/static/css/main.5e2ba78a.css.map",
+    "main.ed59d27f.js.map": "/to-do-list-prvolt/static/js/main.ed59d27f.js.map"
   },
   "entrypoints": [
-    "static/css/main.1066743c.css",
-    "static/js/main.2690eef1.js"
+    "static/css/main.5e2ba78a.css",
+    "static/js/main.ed59d27f.js"
   ]
 }
