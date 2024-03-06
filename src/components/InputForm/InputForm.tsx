@@ -1,34 +1,34 @@
-import React, { useState } from "react";
-import { BsSave } from "react-icons/bs";
-import { useDispatch } from "react-redux";
-import { addTask } from "../../redux/tasksSlice";
+import React, { useState } from 'react'
+import { BsSave } from 'react-icons/bs'
+import { useDispatch } from 'react-redux'
+import { addTask } from '../../redux/tasksSlice'
 
-const MAX_CHARACTER_LENGTH = 100;
+const MAX_CHARACTER_LENGTH = 100
 
-export const InputForm = () => {
-  const [query, setQuery] = useState("");
-  const dispatch = useDispatch();
+export const InputForm: React.FC = () => {
+  const [query, setQuery] = useState('')
+  const dispatch = useDispatch()
 
-  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.currentTarget.value);
-  };
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setQuery(e.currentTarget.value)
+  }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault()
     if (
       query.trim().length > 0 &&
       query.trim().length <= MAX_CHARACTER_LENGTH
     ) {
-      dispatch(addTask(query));
-      setQuery("");
+      dispatch(addTask(query))
+      setQuery('')
     } else if (query.trim().length === 0) {
-      alert("Please enter a non-empty task.");
+      alert('Please enter a non-empty task.')
     } else if (query.trim().length > MAX_CHARACTER_LENGTH) {
       alert(
         `Please enter a task with ${MAX_CHARACTER_LENGTH} characters or less.`
-      );
+      )
     }
-  };
+  }
 
   return (
     <form className="relative mx-auto mb-10 w-96" onSubmit={handleSubmit}>
@@ -50,5 +50,5 @@ export const InputForm = () => {
         autoFocus
       />
     </form>
-  );
-};
+  )
+}

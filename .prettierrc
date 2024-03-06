@@ -1,0 +1,18 @@
+{
+  "trailingComma": "none",
+  "semi": false,
+  "singleQuote": true,
+  "jsxBracketSameLine": true,
+  "overrides": [
+    {
+      "files": "*.tsx",
+      "options": {
+        "parser": "typescript-eslint-parser",
+        "plugins": ["@typescript-eslint"],
+        "rules": {
+          "@typescript-eslint/no-extra-parens": "off"
+        }
+      }
+    }
+  ]
+}

@@ -1,5 +1,5 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { combineReducers } from "redux";
+import { configureStore } from '@reduxjs/toolkit'
+import { combineReducers } from 'redux'
 import {
   persistStore,
   persistReducer,
@@ -8,24 +8,24 @@ import {
   PAUSE,
   PERSIST,
   PURGE,
-  REGISTER,
-} from "redux-persist";
-import storage from "redux-persist/lib/storage";
-import { tasksReducer } from "./tasksSlice";
-import { filtersReducer } from "./filtersSlice";
+  REGISTER
+} from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
+import { tasksReducer } from './tasksSlice'
+import { filtersReducer } from './filtersSlice'
 
 const rootReducer = combineReducers({
   tasks: tasksReducer,
-  filters: filtersReducer,
-});
+  filters: filtersReducer
+})
 
 const persistConfig = {
-  key: "root",
+  key: 'root',
   storage,
-  whitelist: ["tasks", "filters"],
-};
+  whitelist: ['tasks', 'filters']
+}
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 export const store = configureStore({
   reducer: persistedReducer,
@@ -33,10 +33,10 @@ export const store = configureStore({
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-        ignoredPaths: ["transactions.date"],
-      },
+        ignoredPaths: ['transactions.date']
+      }
     }),
-  devTools: process.env.NODE_ENV === "development",
-});
+  devTools: process.env.NODE_ENV === 'development'
+})
 
-export const persistor = persistStore(store);
+export const persistor = persistStore(store)
