@@ -12,27 +12,37 @@ export const Todo = ({ task }: { task: Task }) => {
   const handleToggle = () => dispatch(toggleCompleted(task.id));
 
   return (
-    <div className="relative size-full rounded-lg bg-gray-200 p-10 text-gray-600 shadow-md transition-transform duration-200 hover:scale-105 focus:scale-105">
-      <p className="mb-5 text-center text-lg font-bold">TODO #</p>
-      <p className="mb-5 text-center text-lg ">{task.text}</p>
-
-      {task.completed ? (
-        <button
-          className="absolute bottom-0 left-0 p-2 transition-transform duration-200 hover:scale-105 focus:scale-105"
-          type="button"
+    <div className="relative size-full rounded-lg bg-gray-200 p-6 text-gray-600 shadow-md transition-transform duration-200 hover:scale-105 focus:scale-105">
+      <p className="mb-2.5 text-center text-lg font-bold">TODO #</p>
+      <div className="flex items-center">
+        {task.completed ? (
+          <button
+            className="p-2 transition-transform duration-200 hover:scale-105 focus:scale-105"
+            type="button"
+            onClick={handleToggle}
+          >
+            <BiChevronDownCircle size={32} />
+          </button>
+        ) : (
+          <button
+            className="p-2 transition-transform duration-200 hover:scale-105 focus:scale-105"
+            type="button"
+            onClick={handleToggle}
+          >
+            <BiCircle size={32} />
+          </button>
+        )}
+        <p
+          className={
+            task.completed
+              ? "cursor-pointer text-center text-lg line-through"
+              : "cursor-pointer text-center text-lg"
+          }
           onClick={handleToggle}
         >
-          <BiChevronDownCircle size={32} />
-        </button>
-      ) : (
-        <button
-          className="absolute bottom-0 left-0 p-2 transition-transform duration-200 hover:scale-105 focus:scale-105"
-          type="button"
-          onClick={handleToggle}
-        >
-          <BiCircle size={32} />
-        </button>
-      )}
+          {task.text}
+        </p>
+      </div>
 
       <button
         className="absolute right-0 top-0 p-2 transition-transform duration-200 ease-in-out hover:scale-105 focus:scale-105"

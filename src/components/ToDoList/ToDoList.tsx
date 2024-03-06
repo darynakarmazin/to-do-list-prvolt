@@ -27,7 +27,7 @@ function ToDoList() {
       {visibleTasks.map((task) => (
         <li
           key={task.id}
-          className="flex h-48 basis-2/5 flex-col items-center justify-center"
+          className="flex h-36 basis-2/5 flex-col items-center justify-center"
         >
           <Todo task={task} />
         </li>
