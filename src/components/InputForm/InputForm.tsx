@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { BsSave } from "react-icons/bs";
-// import { nanoid } from "nanoid";
+import { useDispatch } from "react-redux";
+import { addTask } from "../../redux/tasksSlice";
 
 export const InputForm = () => {
   const [query, setQuery] = useState("");
+  const dispatch = useDispatch();
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.currentTarget.value);
@@ -11,8 +13,7 @@ export const InputForm = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // const newId = nanoid();
-    // addTodo({ title: query, id: newId, completed: false });
+    dispatch(addTask(query));
     setQuery("");
   };
 
