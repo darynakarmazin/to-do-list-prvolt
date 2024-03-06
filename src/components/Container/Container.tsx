@@ -5,7 +5,11 @@ interface ContainerProps {
 }
 
 function Container({ children }: ContainerProps) {
-  return <div className="mx-auto max-w-screen-xl p-5">{children}</div>;
+  return (
+    <div className="flex justify-between items-center mx-auto max-w-screen-xl p-5">
+      {children}
+    </div>
+  );
 }
 
 export default Container;

@@ -1,5 +1,7 @@
 import Container from "../Container/Container";
 import { FiCheckCircle } from "react-icons/fi";
+import { TaskCounter } from "../TaskCounter/TaskCounter";
+import { StatusFilter } from "../StatusFilter/StatusFilter";
 
 function Header() {
   return (
@@ -9,6 +11,8 @@ function Header() {
           <FiCheckCircle size="28px" />
           TODO List
         </div>
+        <TaskCounter />
+        <StatusFilter />
       </Container>
     </header>
   );
