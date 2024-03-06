@@ -19,6 +19,17 @@ task.md
 ## Learn More
 Test task. TODO List App a React application incorporating a TODO list CRUD operations, custom design.
 
+Developed:
+- Adding a new record.
+- A new record is added if its length is less than or equal to N characters. (N=100).
+- Displaying a list of added records.
+- Switching the status of a record Completed / Not completed when clicking on its name.
+- Filtering by type (all, completed, current).
+- Display counter of completed and uncompleted tasks.
+- Use a storage (Redux).
+- For styling used Tailwind CSS.
+- Used this linter https://github.com/wemake-services/wemake-frontend-styleguide.
+
 
 Main page
 ![Main page](https://github.com/darynakarmazin/to-do-list-prvolt/raw/main/src/img/img-1.png)
