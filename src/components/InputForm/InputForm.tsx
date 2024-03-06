@@ -1,7 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { BsSave } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { addTask } from "../../redux/tasksSlice";
+
+const MAX_CHARACTER_LENGTH = 100;
 
 export const InputForm = () => {
   const [query, setQuery] = useState("");
@@ -13,8 +15,19 @@ export const InputForm = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(addTask(query));
-    setQuery("");
+    if (
+      query.trim().length > 0 &&
+      query.trim().length <= MAX_CHARACTER_LENGTH
+    ) {
+      dispatch(addTask(query));
+      setQuery("");
+    } else if (query.trim().length === 0) {
+      alert("Please enter a non-empty task.");
+    } else if (query.trim().length > MAX_CHARACTER_LENGTH) {
+      alert(
+        `Please enter a task with ${MAX_CHARACTER_LENGTH} characters or less.`
+      );
+    }
   };
 
   return (
@@ -28,7 +41,7 @@ export const InputForm = () => {
       </button>
 
       <input
-        className="h-14 w-full border-b  border-gray-700 bg-transparent px-4 pr-16 text-lg font-light tracking-wide text-gray-700 outline-none transition duration-300 ease-in-out"
+        className="h-14 w-full border-b border-gray-700 bg-transparent px-4 pr-16 text-lg font-light tracking-wide text-gray-700 outline-none transition duration-300 ease-in-out"
         onChange={handleInput}
         placeholder="What do you want to write?"
         name="search"

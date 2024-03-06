@@ -14,7 +14,7 @@ export const Todo = ({ task }: { task: Task }) => {
   return (
     <div className="relative size-full rounded-lg bg-gray-200 p-6 text-gray-600 shadow-md transition-transform duration-200 hover:scale-105 focus:scale-105">
       <p className="mb-2.5 text-center text-lg font-bold">TODO #</p>
-      <div className="flex items-center">
+      <div className="flex items-center" style={{ overflowWrap: "anywhere" }}>
         {task.completed ? (
           <button
             className="p-2 transition-transform duration-200 hover:scale-105 focus:scale-105"
