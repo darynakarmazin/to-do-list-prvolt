@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction, nanoid } from '@reduxjs/toolkit'
 import { Task } from '../types/types'
+import { mockData } from '../data/mockdata'
 
-const tasksInitialState: Task[] = []
+const tasksInitialState: Task[] = mockData || []
 
 const tasksSlice = createSlice({
   name: 'tasks',
