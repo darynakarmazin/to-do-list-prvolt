@@ -1,3 +1,6 @@
 {
-  "extends": ["@wemake-services/typescript/recommended"]
+  "extends": [
+    "@wemake-services/typescript/recommended",
+    "@wemake-services/javascript"
+  ]
 }
