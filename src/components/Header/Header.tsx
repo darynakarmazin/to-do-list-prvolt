@@ -1,9 +1,9 @@
 import React from 'react'
 import { FiCheckCircle } from 'react-icons/fi'
-import { TaskCounter } from '../TaskCounter/TaskCounter'
-import { StatusFilter } from '../StatusFilter/StatusFilter'
+import { TaskCounter } from '../TaskCounter/task-counter'
+import { StatusFilter } from '../StatusFilter/status-filter'
 
-function Header(): JSX.Element {
+function Header(): React.JSX.Element {
   return (
     <header className="mb-0 rounded-b-lg bg-white text-lg font-bold uppercase text-gray-700 shadow-lg">
       <div className="flex justify-between items-center mx-auto max-w-screen-xl p-5">

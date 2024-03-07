@@ -3,6 +3,7 @@
   "semi": false,
   "singleQuote": true,
   "jsxBracketSameLine": true,
+  "quoteProps": "as-needed",
   "overrides": [
     {
       "files": "*.tsx",

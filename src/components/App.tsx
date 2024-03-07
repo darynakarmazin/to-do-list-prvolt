@@ -1,7 +1,7 @@
-import React from 'react'
-import Container from './Container/Container'
-import Header from './Header/Header'
-import { InputForm } from './InputForm/InputForm'
+import { JSX } from 'react'
+import Header from './Header/header'
+import Container from './Container/container'
+import { InputForm } from './InputForm/input-form'
 import ToDoList from './ToDoList/ToDoList'
 
 function App(): JSX.Element {

@@ -12,7 +12,7 @@ const Button: React.FC<ButtonProps> = ({
   selected = false,
   type = 'button',
   children,
-  onClick
+  onClick,
 }) => {
   return (
     <button
@@ -21,8 +21,8 @@ const Button: React.FC<ButtonProps> = ({
         'text-gray-700 bg-gray-300 hover:bg-gray-400 focus:outline-none',
         'focus:ring focus:ring-gray-500 active:bg-gray-500 transition duration-150 ease-in-out',
         {
-          'bg-blue-600 text-white': selected
-        }
+          'bg-blue-600 text-white': selected,
+        },
       )}
       type={type}
       onClick={onClick}

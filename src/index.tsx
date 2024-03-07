@@ -1,13 +1,14 @@
-import React from "react"
-import ReactDOM from "react-dom/client"
-import "./index.css"
-import App from "./components/App"
-import { Provider } from "react-redux"
-import { persistor, store } from "./redux/store"
-import { PersistGate } from "redux-persist/integration/react"
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
+import App from './components/app'
+import { Provider } from 'react-redux'
+import { persistor, store } from './redux/store'
+import { PersistGate } from 'redux-persist/integration/react'
 
 const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+  // eslint-disable-next-line no-undef
+  document.querySelector('#root') as HTMLElement,
 )
 root.render(
   <React.StrictMode>
@@ -16,5 +17,5 @@ root.render(
         <App />
       </PersistGate>
     </Provider>
-  </React.StrictMode>
+  </React.StrictMode>,
 )

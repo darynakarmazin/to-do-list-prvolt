@@ -2,7 +2,7 @@ import React from 'react'
 import { RiDeleteBinLine } from 'react-icons/ri'
 import { BiCircle, BiChevronDownCircle } from 'react-icons/bi'
 import { useDispatch } from 'react-redux'
-import { deleteTask, toggleCompleted } from '../../redux/tasksSlice'
+import { deleteTask, toggleCompleted } from '../../redux/tasks-slice'
 import { Task } from '../../types/types'
 
 export const Todo: React.FC<{ task: Task }> = ({ task }) => {

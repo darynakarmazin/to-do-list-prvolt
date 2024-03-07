@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { BsSave } from 'react-icons/bs'
 import { useDispatch } from 'react-redux'
-import { addTask } from '../../redux/tasksSlice'
+import { addTask } from '../../redux/tasks-slice'
 
 const MAX_CHARACTER_LENGTH = 100
 
@@ -9,12 +9,12 @@ export const InputForm: React.FC = () => {
   const [query, setQuery] = useState('')
   const dispatch = useDispatch()
 
-  const handleInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setQuery(e.currentTarget.value)
+  const handleInput = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    setQuery(event.currentTarget.value)
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
-    e.preventDefault()
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+    event.preventDefault()
     if (
       query.trim().length > 0 &&
       query.trim().length <= MAX_CHARACTER_LENGTH
@@ -25,7 +25,7 @@ export const InputForm: React.FC = () => {
       alert('Please enter a non-empty task.')
     } else if (query.trim().length > MAX_CHARACTER_LENGTH) {
       alert(
-        `Please enter a task with ${MAX_CHARACTER_LENGTH} characters or less.`
+        `Please enter a task with ${MAX_CHARACTER_LENGTH} characters or less.`,
       )
     }
   }

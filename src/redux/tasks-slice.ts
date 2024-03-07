@@ -5,22 +5,22 @@ import { mockData } from '../data/mockdata'
 const tasksInitialState: Task[] = mockData || []
 
 const tasksSlice = createSlice({
-  name: 'tasks',
-  initialState: tasksInitialState,
-  reducers: {
-    addTask: {
+  'name': 'tasks',
+  'initialState': tasksInitialState,
+  'reducers': {
+    'addTask': {
       reducer(state, action: PayloadAction<Task>) {
         state.push(action.payload)
       },
       prepare(text: string) {
         return {
-          payload: {
+          'payload': {
             text,
-            id: nanoid(),
-            completed: false
-          }
+            'id': nanoid(),
+            'completed': false,
+          },
         }
-      }
+      },
     },
     deleteTask(state, action) {
       const index = state.findIndex((task) => task.id === action.payload)
@@ -33,8 +33,8 @@ const tasksSlice = createSlice({
           break
         }
       }
-    }
-  }
+    },
+  },
 })
 
 export const { addTask, deleteTask, toggleCompleted } = tasksSlice.actions

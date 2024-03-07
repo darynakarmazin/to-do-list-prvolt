@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux'
 import { getTasks } from '../../redux/selectors'
+import React from 'react'
 
 export const TaskCounter: React.FC = () => {
   const tasks = useSelector(getTasks)
@@ -13,7 +14,7 @@ export const TaskCounter: React.FC = () => {
       }
       return acc
     },
-    { active: 0, completed: 0 }
+    { 'active': 0, 'completed': 0 },
   )
 
   return (
