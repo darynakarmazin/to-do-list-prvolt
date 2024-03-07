@@ -24,9 +24,7 @@ export const InputForm: React.FC = () => {
     } else if (query.trim().length === 0) {
       alert('Please enter a non-empty task.')
     } else if (query.trim().length > MAX_CHARACTER_LENGTH) {
-      alert(
-        `Please enter a task with ${MAX_CHARACTER_LENGTH} characters or less.`,
-      )
+      alert(`Please enter a task with ${MAX_CHARACTER_LENGTH} characters or less.`)
     }
   }
 
