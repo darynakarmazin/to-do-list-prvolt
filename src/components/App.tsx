@@ -2,7 +2,7 @@ import { JSX } from 'react'
 import Header from './Header/header'
 import Container from './Container/container'
 import { InputForm } from './InputForm/input-form'
-import ToDoList from './ToDoList/ToDoList'
+import ToDoList from './ToDoList/to-do-list'
 
 function App(): JSX.Element {
   return (

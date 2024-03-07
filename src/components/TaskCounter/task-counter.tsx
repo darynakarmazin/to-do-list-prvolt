@@ -5,22 +5,21 @@ import React from 'react'
 export const TaskCounter: React.FC = () => {
   const tasks = useSelector(getTasks)
 
-  const count = tasks.reduce(
-    (acc, task) => {
-      if (task.completed) {
-        acc.completed += 1
-      } else {
-        acc.active += 1
-      }
-      return acc
-    },
-    { 'active': 0, 'completed': 0 },
-  )
+  let completedCount = 0
+  let activeCount = 0
+
+  for (const task of tasks) {
+    if (task.completed) {
+      completedCount += 1
+    } else {
+      activeCount += 1
+    }
+  }
 
   return (
     <div>
-      <p>Completed: {count.completed}</p>
-      <p>Uncompleted: {count.active}</p>
+      <p>Completed: {completedCount}</p>
+      <p>Uncompleted: {activeCount}</p>
     </div>
   )
 }
