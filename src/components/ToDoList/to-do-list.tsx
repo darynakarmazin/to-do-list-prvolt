@@ -28,8 +28,7 @@ const ToDoList: React.FC = () => {
     <ul className="mb-10 flex flex-wrap justify-center gap-5 items-center">
       {visibleTasks.map((task) => <li key={task.id}
         className="flex h-36 basis-2/5 flex-col items-center justify-center">
-        <Todo task={task} /> </li>,
-      )}
+        <Todo task={task} /> </li>)}
     </ul>
   )
 }
