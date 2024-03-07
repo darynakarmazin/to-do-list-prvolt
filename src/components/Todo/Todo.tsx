@@ -17,14 +17,18 @@ export const Todo: React.FC<{ task: Task }> = ({ task }) => {
   }
 
   return (
-    <div className="relative size-full rounded-lg bg-gray-200 p-6 text-gray-600 shadow-md transition-transform duration-200 hover:scale-105 focus:scale-105">
+    <div className={'relative size-full rounded-lg bg-gray-200 p-6' +
+      ' text-gray-600 shadow-md transition-transform duration-200' +
+      ' hover:scale-105 focus:scale-105'}>
       <p className="mb-2.5 text-center text-lg font-bold">TODO #</p>
       <div className="flex items-center" style={{ 'overflowWrap': 'anywhere' }}>
-        {task.completed ? <button className="p-2 transition-transform duration-200 hover:scale-105 focus:scale-105"
-          type="button"
-          onClick={handleToggle}>
+        {task.completed ? <button className={'p-2 transition-transform' +
+        ' duration-200 hover:scale-105 focus:scale-105'}
+        type="button"
+        onClick={handleToggle}>
           <BiChevronDownCircle size={32} /></button> : <button
-          className="p-2 transition-transform duration-200 hover:scale-105 focus:scale-105"
+          className={'p-2 transition-transform duration-200 hover:scale-105' +
+          ' focus:scale-105'}
           type="button"
           onClick={handleToggle}
         >
@@ -32,9 +36,8 @@ export const Todo: React.FC<{ task: Task }> = ({ task }) => {
         </button>
         }
         <p
-          className={
-            task.completed ? 'cursor-pointer text-center text-lg line-through' : 'cursor-pointer text-center text-lg'
-          }
+          className={task.completed ? 'cursor-pointer text-center' +
+          ' text-lg line-through' : 'cursor-pointer text-center text-lg'}
           onClick={handleToggle}
         >
           {task.text}
@@ -42,7 +45,8 @@ export const Todo: React.FC<{ task: Task }> = ({ task }) => {
       </div>
 
       <button
-        className="absolute right-0 top-0 p-2 transition-transform duration-200 ease-in-out hover:scale-105 focus:scale-105"
+        className={'absolute right-0 top-0 p-2 transition-transform' +
+        ' duration-200 ease-in-out hover:scale-105 focus:scale-105'}
         type="button"
         aria-label={`Delete ${task.text}`}
         onClick={(): void => handleDelete()}

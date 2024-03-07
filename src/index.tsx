@@ -7,7 +7,7 @@ import { persistor, store } from './redux/store'
 import { PersistGate } from 'redux-persist/integration/react'
 
 const root = ReactDOM.createRoot(
-  // eslint-disable-next-line no-undef
+
   document.querySelector('#root') as HTMLElement,
 )
 root.render(
