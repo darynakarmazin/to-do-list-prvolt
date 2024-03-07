@@ -11,11 +11,11 @@ export const InputForm: React.FC = () => {
   const [query, setQuery] = useState('')
   const dispatch = useDispatch()
 
-  const handleInput = (event: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleInput : React.ComponentProps<'input'>['onChange'] = (event) => {
     setQuery(event.currentTarget.value)
   }
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+  const handleSubmit: React.ComponentProps<'form'>['onSubmit'] = (event) => {
     event.preventDefault()
     if (
       query.trim().length > 0 &&
